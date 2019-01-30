@@ -13,11 +13,16 @@ define(function (require) {
    return Component.extend({
 
       onRendered: function () {
-         console.log('in Name.js', state.Duration);
+ 
          var Number = this.state.Number;
+         console.log('received duration', this.state.Number);
          var Target = (this.state.UNIQUE_ID);
          var _Duration = this.state.Duration;
+
+         console.log('received duration',this.state.Duration);
          console.log('received duration',_Duration);
+
+
          var _number = Target.toString();
 
          /* 
@@ -51,6 +56,7 @@ define(function (require) {
             UNIQUE_ID: state.UNIQUE_ID,
             Number: state.Number,
             css: state.css,
+            Duration:state.Duration,
          });
       }
    });
