@@ -13,17 +13,11 @@ define(function (require) {
    return Component.extend({
 
       onRendered: function () {
- 
-         var Number = this.state.Number;
-         console.log('received duration', this.state.Number);
-         var Target = (this.state.UNIQUE_ID);
-         var _Duration = this.state.Duration;
-
-         console.log('received duration',this.state.Duration);
-         console.log('received duration',_Duration);
-
-
-         var _number = Target.toString();
+         var _startNumber = this.state.startNumber;
+         var _endNumber = this.state.endNumber;
+         var target = (this.state.UNIQUE_ID);
+         var _duration = this.state.duration;
+         var targetTWithStringValue = target.toString();
 
          /* 
          $number.waypoint(function(){
@@ -31,11 +25,11 @@ define(function (require) {
          },{offset:'50%'}) */
          
          var waypoint = new Waypoint({
-            element: document.getElementById(_number),
+            element: document.getElementById(targetTWithStringValue),
             handler: function (direction) {
                var demo, options;
                                         /*(targetid,startVal,endValue,decimals, duration, options) */
-               demo = new countScript.CountUp(_number, 0, Number, 0, _Duration, options);
+               demo = new countScript.CountUp(targetTWithStringValue, _startNumber, _endNumber, 0, _duration, options);
                if (!demo.error) {
                   demo.start();
                } else {
@@ -52,11 +46,11 @@ define(function (require) {
       filterState: function (state) {
         
          return _.extend({}, {
-
             UNIQUE_ID: state.UNIQUE_ID,
-            Number: state.Number,
-            css: state.css,
-            Duration:state.Duration,
+            startNumber:state.startNumber,
+            endNumber: state.endNumber,
+            duration: state.duration,
+            css: state.css
          });
       }
    });

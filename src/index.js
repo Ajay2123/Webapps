@@ -9,15 +9,17 @@
    router.get('/', function (req, res) {
       const UNIQUE_ID = new Date().getTime();
 
-      var number = appData.get('Number'),
-         css = appData.get('css'),
-         duration = appData.get('Duration');
-     
+      var startNumber = appData.get('startNumber'),
+         endNumber = appData.get('endNumber'),
+         duration = appData.get('duration'),
+         css = appData.get('css');
+
       res.render('/', {
          UNIQUE_ID: UNIQUE_ID,
-         Number: number,
-         css: css,
-         Duration: duration,
+         startNumber:startNumber,
+         endNumber: endNumber,
+         duration: duration,
+         css: css
 
       });
    });
