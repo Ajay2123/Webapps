@@ -17,7 +17,7 @@ define(function (require) {
          var _endNumber = this.state.endNumber;
          var target = (this.state.UNIQUE_ID);
          var _duration = this.state.duration;
-         var targetTWithStringValue = target.toString();
+         var targetWithStringValue = target.toString();
 
          /* 
          $number.waypoint(function(){
@@ -25,11 +25,11 @@ define(function (require) {
          },{offset:'50%'}) */
          
          var waypoint = new Waypoint({
-            element: document.getElementById(targetTWithStringValue),
+            element: document.getElementById(targetWithStringValue),
             handler: function (direction) {
                var demo, options;
                                         /*(targetid,startVal,endValue,decimals, duration, options) */
-               demo = new countScript.CountUp(targetTWithStringValue, _startNumber, _endNumber, 0, _duration, options);
+               demo = new countScript.CountUp(targetWithStringValue, _startNumber, _endNumber, 0, _duration, options);
                if (!demo.error) {
                   demo.start();
                } else {
