@@ -25,7 +25,7 @@ define(function (require) {
             endNumber: state.endNumber,
             duration: state.duration,
             css: state.css,
-            font: state.font,
+          
          });
       }
    });

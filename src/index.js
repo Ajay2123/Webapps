@@ -15,7 +15,7 @@
          endNumber = appData.get('endNumber'),
          duration = appData.get('duration'),
          css = appData.get('css');
-         font= fontRepository.getSelectorName();
+        
          
 
          
@@ -26,7 +26,7 @@
          endNumber: endNumber,
          duration: duration,
          css: css,
-         font:font,
+         
          
 
       });
